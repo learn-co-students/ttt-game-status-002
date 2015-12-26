@@ -53,7 +53,8 @@ end
 
 def winner(board)
   won?(board) ? board[won?(board)[0]] : nil
-  
+  #that reurn value if true i think needs a little more explanation
+  #need to know what #won? gives in winning and losing scenarios since i think that index should have the winning char
 end
 #board = ["O", " ", " ", "O", " ", " ", "O", " ", " "]
 #puts positions_filled(board)
