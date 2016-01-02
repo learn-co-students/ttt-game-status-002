@@ -35,12 +35,12 @@ end
 
 # Define #draw? method that returns true for a full board without a winning combination
 def draw?(board)
-  full?(board) && (won?(board) == false)
+  full?(board) && !won?(board)
 end
 
 # Define #over? method that returns true if there is a winning combo, draw, or full board
 def over?(board)
-  won?(board).class == Array || draw?(board) || full?(board)
+  won?(board) || draw?(board) || full?(board)
 end
 
 # Define #winner method that returns the token of the winning combo, "X" or "O"
