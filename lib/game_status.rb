@@ -46,7 +46,7 @@ end
 # Define #winner method that returns the token of the winning combo, "X" or "O"
 def winner(board)
   win_combo = won?(board)
-  if win_combo.class == Array
+  if win_combo
     return board[win_combo[0]]
   end
 end
