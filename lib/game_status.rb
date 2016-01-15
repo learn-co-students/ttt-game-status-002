@@ -22,24 +22,17 @@ def won?(board)
 end 
 
 def full?(board)
-  if board.all? { |el| el.match(/[XO]/) }
-    true
-  else
-    false
-  end
+  return true if board.all? { |el| el.match(/[XO]/) }
+  false
 end
 
 def draw?(board)
-  if full?(board) && won?(board) == false
-    return true
-  end
+  return true if full?(board) && won?(board) == false
   false
 end
 
 def over?(board)
-  if draw?(board) || won?(board)
-    return true
-  end
+ return true if draw?(board) || won?(board)
   false
 end
 
