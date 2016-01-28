@@ -67,14 +67,19 @@ def over?(board)
 end
 
 def winner(board)
+  if won?(board)
+       arry = won?(board)
+         modarry = (board[arry[0]..arry[2]]).select {|x| x == "X"}
+         modarry2 = (board[arry[0]..arry[2]]).select {|x| x == "O"}
+      if modarry == ["X","X","X"]
+        return "X"
+      end
 
-   if won?(board) ==[1,4,7]
-    return "O"
-  elsif won?(board) == [0,4,8]
-     return "X"
+      if  modarry2 == ["O","O","O"]
+        return "O"
+      end
   else
-    return nil
+      return nil
   end
+
 end
-
-
