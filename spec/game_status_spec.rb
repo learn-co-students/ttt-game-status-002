@@ -23,11 +23,7 @@ describe "./lib/game_status.rb" do
       expect(won?(board)).to be_falsey
     end
 
-    it 'returns false for a draw' do
-      board = ["X", "O", "X", "O", "X", "X", "O", "X", "O"]
-
-      expect(won?(board)).to be_falsey
-    end
+#
 
     it 'returns an array of matching indexes for a top row win' do
       board = ["X", "X", "X", " ", " ", " ", " ", " ", " "]
@@ -76,7 +72,12 @@ describe "./lib/game_status.rb" do
 
       expect(won?(board)).to match_array([2,4,6])
     end
+
+  it 'returns false for a draw' do
+      board = ["X", "O", "X", "O", "X", "X", "O", "X", "O"]
+     expect(won?(board)).to be_falsey
   end
+ end
 
   describe '#full?' do
     it 'returns true for a draw' do
