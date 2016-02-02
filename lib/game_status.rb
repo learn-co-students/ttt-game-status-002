@@ -13,6 +13,23 @@ def won?(board)
   false
 end
 
+def full?(board)
+  true unless board.select{|b| b.strip !=""}.size < 9
+
+end
+
+def draw?(board)
+  full?(board) && won?(board)==false
+end
+
+def over?(board)
+  draw?(board) || won?(board)
+end
+
+def winner(board)
+  return board[won?(board)[0]] if won?(board)
+end
+
 WIN_COMBINATIONS = [
   [0,1,2],
   [3,4,5],
